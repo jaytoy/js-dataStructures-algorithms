@@ -2,6 +2,7 @@ class Node {
     constructor(data) {
       this.data = data;
       this.next = null;
+      this.previous = null;
     }
   
     setNextNode(node) {
@@ -10,9 +11,20 @@ class Node {
       }
       this.next = node;
     }
+
+    setPreviousNode(node) {
+        if (node instanceof Node || node === null) {
+            this.previous = node;
+        } else {
+            throw new Error('Previous node must be a member of the Node class')
+        }
+    }
   
     getNextNode() {
-      return this.next;
+        return this.next;
+    }
+    setPreviousNode() {
+        return this.previous;
     }
   }
   
